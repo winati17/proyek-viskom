@@ -5,14 +5,15 @@
 
 ## Tentang Kode Program
 
-Program ini bertujuan untuk membandingkan efektivitas beberapa metode denoising citra menggunakan bahasa pemrograman Python dan library seperti OpenCV, NumPy, dan Scikit-Image. Beberapa metode yang diuji meliputi:
+Program ini bertujuan untuk melakukan eksperimen penambahan noise dan filtering (denoising) citra digital menggunakan Python. Fokus utama program adalah membandingkan efektivitas dua metode filter: Gaussian Filter dan Median Filter terhadap tiga jenis noise:
 
-- Gaussian Smoothing  
-- Median Filtering  
-- Bilateral Filtering  
-- Wavelet Denoising
+- Gaussian Noise
+- Salt & Pepper Noise
+- Speckle Noise
 
-Evaluasi dilakukan berdasarkan metrik kualitas gambar: PSNR, SSIM, MSE, dan SNR. Program ini digunakan untuk menganalisis dampak setiap metode terhadap kualitas visual dan kesetiaan terhadap citra asli.
+Analisis dilakukan dengan mengukur metrik kualitas citra hasil filtering terhadap citra asli menggunakan PSNR (Peak Signal-to-Noise Ratio), MSE (Mean Squared Error), dan SSIM (Structural Similarity Index).
+
+Selain itu, program ini juga membandingkan hasil filtering pada berbagai kernel size dan nilai sigma untuk melihat pengaruh parameter terhadap performa filter.
 
 ## Dataset Citra Input
 Citra input uji dapat ditemukan pada folder `images/`
@@ -28,15 +29,6 @@ Citra input uji dapat ditemukan pada folder `images/`
 ## Cara Menjalankan Program di Lokal
 
 1. Clone atau salin kode program  
-2. Install dependensi yang dibutuhkan  
+2. Install dependensi dengan menambah sel %pip install numpy matplotlib pillow
 3. Sesuaikan path citra input  
-4. Jalankan program melalui terminal atau IDE
-
-## Dependencies
-
-Untuk Google Colab, sebagian besar dependensi sudah tersedia.  
-Untuk lokal, jalankan perintah berikut untuk menginstal dependensi:
-
-```bash
-pip install opencv-python numpy scikit-image matplotlib pywavelets
-```
+4. Jalankan program
